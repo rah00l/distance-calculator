@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class DistancesControllerTest < ActionDispatch::IntegrationTest
+class DistancesControllerTest < ActionController::TestCase
   test "should get index" do
-    get distances_index_url
+    get :index
     assert_response :success
   end
 
