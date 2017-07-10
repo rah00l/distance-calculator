@@ -1,2 +1,14 @@
-<h1>Distances#index</h1>
-<p>Find me in app/views/distances/index.html.erb</p>
+<h3>
+	-::- Calculate distance between two zip codes -::-
+</h3>
+<hr/>
+<p>
+	Sample zip codes - 90210, 98104
+</p>
+<%= form_tag root_path, method: 'get' %>
+	<p><%= text_field_tag :zip_code1, params[:zip_code1], placeholder: "zip code1" %></p>
+	<p class="lead">
+	<p><%= text_field_tag :zip_code2, params[:zip_code2], placeholder: "zip code2" %></p>
+<%= submit_tag "Calculate", name: nil, class: "btn btn-primary btn-lg" %>
+<hr/>
+<p>Distance (In km):  <%= formatted_distance(@calculated_distance) if @calculated_distance  %>
